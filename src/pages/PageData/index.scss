@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .item {
+    width: 100%;
+    overflow: hidden;    
+    text-overflow:ellipsis;    
+    white-space: nowrap;
+    margin: 20px 0;
+  }
+}

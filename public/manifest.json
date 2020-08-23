@@ -1,0 +1,35 @@
+{
+  "name": "Chrome extension demo",
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "description": "my chrome extension demo",
+  "icons": {
+    "16": "images/logo.png",
+    "48": "images/logo.png",
+    "128": "images/logo.png"
+  },
+  "browser_action": {
+    "default_icon": "images/logo.png",
+    "default_title": "plugin demo",
+    "default_popup": "index.html"
+  }, 
+  "content_scripts": 
+	[
+		{
+			"matches": ["<all_urls>"],
+      "js": ["contentScripts/content-script.js"],
+      "run_at": "document_start",
+      "all_frames": true
+		}
+  ],
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "storage",
+    "tabs",
+    "contextMenus",
+    "background",
+    "activeTab"
+  ],
+  "content_security_policy": "script-src 'self'; object-src 'self';"
+}
