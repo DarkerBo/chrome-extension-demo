@@ -6,7 +6,7 @@
 	}, function (tabs) {
 		// 获取当前窗口 id 
 		console.log(tabs, 'tabs');
-		let tabId = tabs.length ? tabs[0].id : null;
+		const tabId = tabs.length ? tabs[0].id : null;
 		// 先向 content-script.js 发送一个消息，用来检验通信通道
 		chrome.tabs.sendMessage(tabId, {
 			message: 'GET_TOPIC_INFO',

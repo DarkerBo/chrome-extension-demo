@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import './index.scss';
 import { Card, Tooltip } from 'antd';
+import styles from './index.module.scss';
 
 type PageInfoType = {
   title: string;
@@ -35,20 +35,20 @@ const PageData: React.FC = () => {
   }, [getPageData])
 
   return (
-    <div className="container">
-      <div className="card-container">
+    <div className={styles.container}>
+      <div className={styles.cardContainer}>
         <Card title="当前Web页面信息" style={{ width: 400 }}>
-          <div className="item">
+          <div className={styles.item}>
             <Tooltip title={pageInfo.link}>
               <span>地址：{pageInfo.link}</span>
             </Tooltip>
           </div>
-          <div className="item">
+          <div className={styles.item}>
             <Tooltip title={pageInfo.title}>
               <span>标题：{pageInfo.title}</span>
             </Tooltip>
           </div>
-          <div className="item">
+          <div className={styles.item}>
             <Tooltip title={pageInfo.description}>
               <span>描述：{pageInfo.description}</span>
             </Tooltip>

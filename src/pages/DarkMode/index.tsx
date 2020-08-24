@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'antd';
+import styles from './index.module.scss';
 
 const DarkMode: React.FC = () => {
   
@@ -16,7 +17,7 @@ const DarkMode: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <Button type="primary" onClick={changeBackgroundStyle}>暗黑模式</Button>
     </div>
   )
