@@ -9,10 +9,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 });
 
 const getMsg = () => {
-  let title = document.getElementsByTagName('title')[0].text;
-  let descriptionEl = document.querySelectorAll('meta[name=description]')[0];
+  const title = document.getElementsByTagName('title')[0].text;
+  const descriptionEl = document.querySelectorAll('meta[name=description]')[0];
   // 获取web网页描述 
-  let description = descriptionEl ? descriptionEl.getAttribute('content') : title;
+  const description = descriptionEl ? descriptionEl.getAttribute('content') : title;
   const msg = {
     title,
     description,
