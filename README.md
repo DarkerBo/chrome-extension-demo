@@ -34,10 +34,33 @@
 
 * **获取Web页面信息**
 
-![获取Web页面信息](.\screenshots\获取Web页面信息.gif)
+![获取Web页面信息](/screenshots/获取Web页面信息.gif)
 
 
 
 * **暗黑模式**
 
-![获取Web页面信息](.\screenshots\暗黑模式.gif)
+![暗黑模式](/screenshots/暗黑模式.gif)
+
+
+
+### 注意事项
+
+1. 为了降低潜在XSS攻击，Chrome 扩展开发 内容安全策略Content Security Policy (CSP)  。因此根据开发者的需要配置白名单：
+
+`manifest.json`
+
+~~~
+"content_security_policy": "script-src 'self'; object-src 'self';"
+~~~
+
+
+
+2. 默认情况下，Create React App将`index.html`在生产构建期间将运行时脚本嵌入到其中。`INLINE_RUNTIME_CHUNK`设置为`false`，脚本将不会被嵌入，并且将照常导入。处理CSP时通常需要这样做：
+
+`package.json`
+
+~~~
+"build": "set \"INLINE_RUNTIME_CHUNK=false\" && react-scripts build"
+~~~
+
